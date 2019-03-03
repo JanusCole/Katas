@@ -2,8 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
 
-import static org.junit.Assert.*;
-
 public class KatasTest {
 
     @Before
@@ -91,20 +89,48 @@ public class KatasTest {
         Assert.assertEquals("", Katas.reverseStringRecursively(""));
     }
 
-    // Test Reversing An Integer
+    // Test Reversing An Integer Iteratively
 
     @Test
-    public void testReversingAnInteger123() {
-        Assert.assertEquals(321, Katas.reverseInteger(123));
+    public void testReverseIntegerIteratively123() {
+        Assert.assertEquals(321, Katas.reverseIntegerIteratively(123));
     }
 
     @Test
-    public void testReversingAnInteger1() {
-        Assert.assertEquals(1, Katas.reverseInteger(1));
+    public void testReverseIntegerIteratively0() {
+        Assert.assertEquals(0, Katas.reverseIntegerIteratively(0));
     }
 
     @Test
-    public void testReversingAnInteger12() {
-        Assert.assertEquals(21, Katas.reverseInteger(12));
+    public void testReverseIntegerIteratively1() {
+        Assert.assertEquals(1, Katas.reverseIntegerIteratively(1));
     }
+
+    @Test
+    public void testReverseIntegerIteratively12() {
+        Assert.assertEquals(21, Katas.reverseIntegerIteratively(12));
+    }
+
+    // Test Reversing An Integer Recursively
+
+    @Test
+    public void testReverseIntegerRecursively123() {
+        Assert.assertEquals(321, Katas.reverseIntegerRecursively(123));
+    }
+
+    @Test
+    public void testReverseIntegerRecursively0() {
+        Assert.assertEquals(0, Katas.reverseIntegerRecursively(0));
+    }
+
+    @Test
+    public void testReverseIntegerRecursively1() {
+        Assert.assertEquals(1, Katas.reverseIntegerRecursively(1));
+    }
+
+    @Test
+    public void testReverseIntegerRecursively12() {
+        Assert.assertEquals(21, Katas.reverseIntegerRecursively(12));
+    }
+
 }

@@ -28,7 +28,7 @@ public class Katas {
 
     // Reverse An Integer
 
-    public static int reverseInteger(int integerToBeReversed) {
+    public static int reverseIntegerIteratively(int integerToBeReversed) {
 
         int reversedInteger = 0;
         int currentValue = integerToBeReversed;
@@ -42,4 +42,16 @@ public class Katas {
         return reversedInteger;
     }
 
+    public static int reverseIntegerRecursively(int integerToBeReversed) {
+
+        if ((integerToBeReversed / 10) == 0) {
+            return integerToBeReversed;
+        }
+
+        int leastSignificantDigit = integerToBeReversed % 10;
+        int newMostSignificantDigit = leastSignificantDigit * (int) Math.pow(10, (int) Math.log10(integerToBeReversed));
+
+        return newMostSignificantDigit + reverseIntegerRecursively(integerToBeReversed / 10);
+
+    }
 }
