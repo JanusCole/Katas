@@ -90,4 +90,21 @@ public class KatasTest {
     public void testReverseStringRecursivelyNull() {
         Assert.assertEquals("", Katas.reverseStringRecursively(""));
     }
+
+    // Test Reversing An Integer
+
+    @Test
+    public void testReversingAnInteger123() {
+        Assert.assertEquals(321, Katas.reverseInteger(123));
+    }
+
+    @Test
+    public void testReversingAnInteger1() {
+        Assert.assertEquals(1, Katas.reverseInteger(1));
+    }
+
+    @Test
+    public void testReversingAnInteger12() {
+        Assert.assertEquals(21, Katas.reverseInteger(12));
+    }
 }

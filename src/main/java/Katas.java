@@ -1,5 +1,7 @@
 public class Katas {
 
+    // Reverse A String
+
     public static String reverseStringIteratively(String stringToBeReversed) {
 
         StringBuilder reversedString = new StringBuilder();
@@ -22,6 +24,22 @@ public class Katas {
         }
 
         return new StringBuilder(reverseStringRecursively(stringToBeReversed.substring(1))).append(stringToBeReversed.charAt(0)).toString();
+    }
+
+    // Reverse An Integer
+
+    public static int reverseInteger(int integerToBeReversed) {
+
+        int reversedInteger = 0;
+        int currentValue = integerToBeReversed;
+
+        while (currentValue > 0) {
+            int leastSignificantDigit = currentValue % 10;
+            reversedInteger = (reversedInteger * 10) + leastSignificantDigit;;
+            currentValue = currentValue / 10;
+        }
+
+        return reversedInteger;
     }
 
 }
