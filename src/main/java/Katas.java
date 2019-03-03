@@ -33,9 +33,9 @@ public class Katas {
         int reversedInteger = 0;
         int currentValue = integerToBeReversed;
 
-        while (currentValue > 0) {
-            int leastSignificantDigit = currentValue % 10;
-            reversedInteger = (reversedInteger * 10) + leastSignificantDigit;;
+        while (currentValue != 0) {
+            int leastSignificantDigit = (currentValue % 10);
+            reversedInteger = (reversedInteger * 10) + leastSignificantDigit;
             currentValue = currentValue / 10;
         }
 
@@ -47,11 +47,10 @@ public class Katas {
         if ((integerToBeReversed / 10) == 0) {
             return integerToBeReversed;
         }
-
-        int leastSignificantDigit = integerToBeReversed % 10;
-        int newMostSignificantDigit = leastSignificantDigit * (int) Math.pow(10, (int) Math.log10(integerToBeReversed));
+        
+        int leastSignificantDigit = (integerToBeReversed % 10);
+        int newMostSignificantDigit = leastSignificantDigit * (int) Math.pow(10, (int) Math.log10(Math.abs(integerToBeReversed)));
 
         return newMostSignificantDigit + reverseIntegerRecursively(integerToBeReversed / 10);
-
     }
 }

@@ -111,6 +111,21 @@ public class KatasTest {
         Assert.assertEquals(21, Katas.reverseIntegerIteratively(12));
     }
 
+    @Test
+    public void testReverseIntegerIterativelyMinus123() {
+        Assert.assertEquals(-321, Katas.reverseIntegerIteratively(-123));
+    }
+
+    @Test
+    public void testReverseIntegerIterativelyMinus1() {
+        Assert.assertEquals(-1, Katas.reverseIntegerIteratively(-1));
+    }
+
+    @Test
+    public void testReverseIntegerIterativelyMinus12() {
+        Assert.assertEquals(-21, Katas.reverseIntegerIteratively(-12));
+    }
+
     // Test Reversing An Integer Recursively
 
     @Test
@@ -132,5 +147,18 @@ public class KatasTest {
     public void testReverseIntegerRecursively12() {
         Assert.assertEquals(21, Katas.reverseIntegerRecursively(12));
     }
+    @Test
+    public void testReverseIntegerRecursivelyMinus123() {
+        Assert.assertEquals(-321, Katas.reverseIntegerRecursively(-123));
+    }
 
+    @Test
+    public void testReverseIntegerRecursivelyMinus1() {
+        Assert.assertEquals(-1, Katas.reverseIntegerRecursively(-1));
+    }
+
+    @Test
+    public void testReverseIntegerRecursivelyMinus12() {
+        Assert.assertEquals(-21, Katas.reverseIntegerRecursively(-12));
+    }
 }
