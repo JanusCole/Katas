@@ -161,4 +161,63 @@ public class KatasTest {
     public void testReverseIntegerRecursivelyMinus12() {
         Assert.assertEquals(-21, Katas.reverseIntegerRecursively(-12));
     }
+    
+    @Test
+    public void parenthesisAreBalanced1() {
+        Assert.assertEquals(true, Katas.parenthesisAreBalanced("()"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced2() {
+        Assert.assertEquals(true, Katas.parenthesisAreBalanced("(<>)"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced3() {
+        Assert.assertEquals(true, Katas.parenthesisAreBalanced("(<><>[])"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced31() {
+        Assert.assertEquals(true, Katas.parenthesisAreBalanced("{<><>[]}"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced4() {
+        Assert.assertEquals(true, Katas.parenthesisAreBalanced("{}"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced5() {
+        Assert.assertEquals(false, Katas.parenthesisAreBalanced("("));
+    }
+
+    @Test
+    public void parenthesisAreBalanced6() {
+        Assert.assertEquals(false, Katas.parenthesisAreBalanced(")"));
+    }
+
+    @Test
+    public void parenthesisAreBalanced7() {
+        Assert.assertEquals(false, Katas.parenthesisAreBalanced("(<)"));
+    }
+
+    @Test
+    public void testNonRepeatingCharacter_ABCCA () {
+        Assert.assertEquals((Character) 'B', Katas.findFirstNonRepeatingCharacter("ABCCA"));
+    }
+
+    @Test
+    public void testNonRepeatingCharacter_ABCCABD () {
+        Assert.assertEquals((Character) 'D', Katas.findFirstNonRepeatingCharacter("ABCCABD"));
+    }
+    @Test
+    public void testNonRepeatingCharacter_ABCCAB () {
+        Assert.assertEquals(null, Katas.findFirstNonRepeatingCharacter("ABCCAB"));
+    }
+
+    @Test
+    public void testBubbleSort_5_7_3_11_6_2_4() {
+        Assert.assertArrayEquals(new int [] {2,3,4,5,6,7,11}, Katas.bubbleSort(new int [] {5,7,3,11,6,2,4}));
+    }
 }
