@@ -172,5 +172,42 @@ public class Katas {
         }
         return arrayToSort;
     }
+
+    public static boolean isPalindrome(String inputString) {
+
+        // TODO Can I make this nicer
+        if (inputString.length() == 0) return true;
+
+        for (int index = 0; index <= (inputString.length() / 2); index++) {
+
+            if (inputString.charAt(index) != inputString.charAt(inputString.length() - index - 1)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    // TODO palindrome recursively
+
+    public static long factorialIteratively(int inputInteger) {
+
+        // TODO Handle zero
+
+        long result = 1;
+
+        for (int index = 1;index <= inputInteger;index++) {
+            result = result * index;
+        }
+
+        return result;
+    }
+
+    public static long factorialRecursively(int inputInteger) {
+        if (inputInteger < 2) {
+            return inputInteger;
+        }
+        return inputInteger * factorialRecursively(inputInteger - 1);
+    }
             
 }

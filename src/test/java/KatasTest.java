@@ -220,4 +220,91 @@ public class KatasTest {
     public void testBubbleSort_5_7_3_11_6_2_4() {
         Assert.assertArrayEquals(new int [] {2,3,4,5,6,7,11}, Katas.bubbleSort(new int [] {5,7,3,11,6,2,4}));
     }
+
+    @Test
+    public void testPalindromeEmptyString() {
+        Assert.assertEquals(true, Katas.isPalindrome(""));
+    }
+
+    @Test
+    public void testPalindromeA() {
+        Assert.assertEquals(true, Katas.isPalindrome("A"));
+    }
+
+    @Test
+    public void testPalindromeAB() {
+        Assert.assertEquals(false, Katas.isPalindrome("AB"));
+    }
+
+    @Test
+    public void testPalindromeABA() {
+        Assert.assertEquals(true, Katas.isPalindrome("ABA"));
+    }
+
+    @Test
+    public void testPalindromeABAD() {
+        Assert.assertEquals(false, Katas.isPalindrome("ABAD"));
+    }
+
+    @Test
+    public void testPalindromeABDBA() {
+        Assert.assertEquals(true, Katas.isPalindrome("ABDBA"));
+    }
+
+    @Test
+    public void testFqactorialInteratively1() {
+        Assert.assertEquals(1, Katas.factorialIteratively(1));
+    }
+
+    @Test
+    public void testFqactorialInteratively2() {
+        Assert.assertEquals(2, Katas.factorialIteratively(2));
+    }
+
+    @Test
+    public void testFqactorialInteratively3() {
+        Assert.assertEquals(6, Katas.factorialIteratively(3));
+    }
+
+    @Test
+    public void testFqactorialInteratively4() {
+        Assert.assertEquals(24, Katas.factorialIteratively(4));
+    }
+
+    @Test
+    public void testFqactorialInteratively5() {
+        Assert.assertEquals(120, Katas.factorialIteratively(5));
+    }
+
+    @Test
+    public void testFqactorialRecursively0() {
+        Assert.assertEquals(0, Katas.factorialRecursively(0));
+    }
+
+    @Test
+    public void testFqactorialRecursively1() {
+        Assert.assertEquals(1, Katas.factorialRecursively(1));
+    }
+
+    @Test
+    public void testFqactorialRecursively2() {
+        Assert.assertEquals(2, Katas.factorialRecursively(2));
+    }
+
+    @Test
+    public void testFqactorialRecursively3() {
+        Assert.assertEquals(6, Katas.factorialRecursively(3));
+    }
+
+    @Test
+    public void testFqactorialRecursively4() {
+        Assert.assertEquals(24, Katas.factorialRecursively(4));
+    }
+
+    @Test
+    public void testFqactorialRecursively5() {
+        Assert.assertEquals(120, Katas.factorialRecursively(5));
+    }
+
+
 }
