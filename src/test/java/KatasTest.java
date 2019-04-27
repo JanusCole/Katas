@@ -306,5 +306,44 @@ public class KatasTest {
         Assert.assertEquals(120, Katas.factorialRecursively(5));
     }
 
+    @Test
+    public void testIsIntegerPalindrome_0() {
+        Assert.assertEquals(true, Katas.isInetegerAPalindrome(0));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_1() {
+        Assert.assertEquals(true, Katas.isInetegerAPalindrome(1));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_10() {
+        Assert.assertEquals(false, Katas.isInetegerAPalindrome(10));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_22() {
+        Assert.assertEquals(true, Katas.isInetegerAPalindrome(22));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_120() {
+        Assert.assertEquals(false, Katas.isInetegerAPalindrome(120));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_121() {
+        Assert.assertEquals(true, Katas.isInetegerAPalindrome(121));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_23632() {
+        Assert.assertEquals(true, Katas.isInetegerAPalindrome(23632));
+    }
+
+    @Test
+    public void testIsIntegerPalindrome_236325() {
+        Assert.assertEquals(false, Katas.isInetegerAPalindrome(236325));
+    }
 
 }

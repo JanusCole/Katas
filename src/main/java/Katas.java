@@ -209,5 +209,19 @@ public class Katas {
         }
         return inputInteger * factorialRecursively(inputInteger - 1);
     }
+
+    public static boolean isInetegerAPalindrome(int inputInteger) {
+
+        int reversedInteger = 0;
+        int currentValue = inputInteger;
+
+        while (currentValue != 0) {
+            int leastSignificantDigit = (currentValue % 10);
+            reversedInteger = (reversedInteger * 10) + leastSignificantDigit;
+            currentValue = currentValue / 10;
+        }
+
+        return (reversedInteger == inputInteger);
+    }
             
 }
