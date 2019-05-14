@@ -1,6 +1,7 @@
-import java.util.Stack;
-import java.util.Map;
-import java.util.HashMap;
+import com.sun.javaws.exceptions.InvalidArgumentException;
+import javafx.util.Pair;
+
+import java.util.*;
 
 public class Katas {
 
@@ -222,6 +223,79 @@ public class Katas {
         }
 
         return (reversedInteger == inputInteger);
+    }
+
+    // Determine if a positive integer is a prime number
+    // Runtime complexity of O(n)
+
+    public static boolean isPrimeNumber (int inputInteger) throws IllegalArgumentException {
+
+        if (inputInteger < 1) {
+            throw new IllegalArgumentException();
+        }
+        if (inputInteger > 3) {
+            for (int index = inputInteger / 2; index >= Math.sqrt(inputInteger); index--) {
+                if ((inputInteger % index) == 0) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    // Given an array of unique integers, and a number ‘sum’, find the number of pairs of integers in the array whose sum is equal to ‘sum’.
+    // Runtime complexity is O(n)
+
+    public static List<Pair<Integer, Integer>> findSummingPairs(int [] inputIntegerArray, int sum) {
+
+        List<Pair<Integer, Integer>> resultPairs = new ArrayList<>();
+
+        Map<Integer, Integer> arrayMap = new HashMap<>();
+
+        for (int index = 0;index < inputIntegerArray.length;index++) {
+            arrayMap.put(inputIntegerArray[index], index);
+        }
+
+        for (int index = 0;index < inputIntegerArray.length;index++) {
+            int difference = sum - inputIntegerArray[index];
+            if (arrayMap.containsKey(difference) && (arrayMap.get(difference) != index)) {
+                resultPairs.add(new Pair<Integer, Integer>(index, arrayMap.get(difference)));
+                arrayMap.remove(difference);
+                arrayMap.remove(inputIntegerArray[index]);
+            }
+        }
+
+        return resultPairs;
+    }
+
+    // Output the string representation of numbers from 1 to n.
+    // But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”.
+    // For numbers which are multiples of both three and five output “FizzBuzz”.
+
+    public static List<String> fizzbuzz(int inputInteger) {
+
+        List<String> resultList = new ArrayList<>();
+
+        for (int index = 1;index <=inputInteger;index++) {
+            StringBuilder resultString = new StringBuilder();
+            if ((index % 3) == 0) {
+                resultString.append("Fizz");
+            }
+
+            if ((index % 5) == 0) {
+                resultString.append("Buzz");
+            }
+
+            if (resultString.length() == 0) {
+                resultString.append(index);
+            }
+
+            resultList.add(resultString.toString());
+        }
+
+        return resultList;
+
     }
             
 }

@@ -1,6 +1,11 @@
+import javafx.util.Pair;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class KatasTest {
 
@@ -252,57 +257,57 @@ public class KatasTest {
     }
 
     @Test
-    public void testFqactorialInteratively1() {
+    public void testFactorialInteratively1() {
         Assert.assertEquals(1, Katas.factorialIteratively(1));
     }
 
     @Test
-    public void testFqactorialInteratively2() {
+    public void testFactorialInteratively2() {
         Assert.assertEquals(2, Katas.factorialIteratively(2));
     }
 
     @Test
-    public void testFqactorialInteratively3() {
+    public void testFactorialInteratively3() {
         Assert.assertEquals(6, Katas.factorialIteratively(3));
     }
 
     @Test
-    public void testFqactorialInteratively4() {
+    public void testFactorialInteratively4() {
         Assert.assertEquals(24, Katas.factorialIteratively(4));
     }
 
     @Test
-    public void testFqactorialInteratively5() {
+    public void testFactorialInteratively5() {
         Assert.assertEquals(120, Katas.factorialIteratively(5));
     }
 
     @Test
-    public void testFqactorialRecursively0() {
+    public void testFactorialRecursively0() {
         Assert.assertEquals(0, Katas.factorialRecursively(0));
     }
 
     @Test
-    public void testFqactorialRecursively1() {
+    public void testFactorialRecursively1() {
         Assert.assertEquals(1, Katas.factorialRecursively(1));
     }
 
     @Test
-    public void testFqactorialRecursively2() {
+    public void testFactorialRecursively2() {
         Assert.assertEquals(2, Katas.factorialRecursively(2));
     }
 
     @Test
-    public void testFqactorialRecursively3() {
+    public void testFactorialRecursively3() {
         Assert.assertEquals(6, Katas.factorialRecursively(3));
     }
 
     @Test
-    public void testFqactorialRecursively4() {
+    public void testFactorialRecursively4() {
         Assert.assertEquals(24, Katas.factorialRecursively(4));
     }
 
     @Test
-    public void testFqactorialRecursively5() {
+    public void testFactorialRecursively5() {
         Assert.assertEquals(120, Katas.factorialRecursively(5));
     }
 
@@ -344,6 +349,148 @@ public class KatasTest {
     @Test
     public void testIsIntegerPalindrome_236325() {
         Assert.assertEquals(false, Katas.isInetegerAPalindrome(236325));
+    }
+
+    // Determine if a positive integer is a prime number
+
+    @Test
+    public void testIsIntegerPrime_1() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(1));
+    }
+
+    @Test
+    public void testIsIntegerPrime_2() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(2));
+    }
+
+    @Test
+    public void testIsIntegerPrime_3() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(3));
+    }
+
+    @Test
+    public void testIsIntegerPrime_4() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(4));
+    }
+
+    @Test
+    public void testIsIntegerPrime_5() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(5));
+    }
+
+    @Test
+    public void testIsIntegerPrime_6() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(6));
+    }
+
+    @Test
+    public void testIsIntegerPrime_7() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(7));
+    }
+
+    @Test
+    public void testIsIntegerPrime_8() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(8));
+    }
+
+    @Test
+    public void testIsIntegerPrime_9() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(9));
+    }
+
+    @Test
+    public void testIsIntegerPrime_10() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(10));
+    }
+
+    @Test
+    public void testIsIntegerPrime_11() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(11));
+    }
+
+    @Test
+    public void testIsIntegerPrime_12() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(12));
+    }
+
+    @Test
+    public void testIsIntegerPrime_13() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(13));
+    }
+
+    @Test
+    public void testIsIntegerPrime_14() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(14));
+    }
+
+    @Test
+    public void testIsIntegerPrime_17() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(17));
+    }
+
+    @Test
+    public void testIsIntegerPrime_19() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(19));
+    }
+
+    @Test
+    public void testIsIntegerPrime_23() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(23));
+    }
+
+    @Test
+    public void testIsIntegerPrime_25() {
+        Assert.assertEquals(false, Katas.isPrimeNumber(25));
+    }
+
+    @Test
+    public void testIsIntegerPrime_31() {
+        Assert.assertEquals(true, Katas.isPrimeNumber(31));
+    }
+
+    // Given an array of unique integers, and a number ‘sum’, find the number of pairs of integers in the array whose sum is equal to ‘sum’.
+
+    @Test
+    public void testTwoSum_1_3_5_7_sum_8() {
+
+        List<Pair<Integer, Integer>> expectedResult = Arrays.asList(new Pair(0,3), new Pair(1,2));
+
+        Assert.assertEquals(expectedResult, Katas.findSummingPairs(new int [] {1,3,5,7}, 8));
+
+    }
+
+    // Output the string representation of numbers from 1 to n.
+    // But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”.
+    // For numbers which are multiples of both three and five output “FizzBuzz”.
+
+    @Test
+    public void testFizzBuzz() {
+
+        List<String> expectedResult = new ArrayList<>();
+        expectedResult.add("1");
+        expectedResult.add("2");
+        expectedResult.add("Fizz");
+        expectedResult.add("4");
+        expectedResult.add("Buzz");
+        expectedResult.add("Fizz");
+        expectedResult.add("7");
+        expectedResult.add("8");
+        expectedResult.add("Fizz");
+        expectedResult.add("Buzz");
+        expectedResult.add("11");
+        expectedResult.add("Fizz");
+        expectedResult.add("13");
+        expectedResult.add("14");
+        expectedResult.add("FizzBuzz");
+        expectedResult.add("16");
+        expectedResult.add("17");
+        expectedResult.add("Fizz");
+        expectedResult.add("19");
+        expectedResult.add("Buzz");
+        expectedResult.add("Fizz");
+
+        Assert.assertEquals(expectedResult, Katas.fizzbuzz(21));
+
     }
 
 }
