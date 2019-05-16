@@ -451,12 +451,35 @@ public class KatasTest {
     // Given an array of unique integers, and a number ‘sum’, find the number of pairs of integers in the array whose sum is equal to ‘sum’.
 
     @Test
+    public void testTwoSum_1_3_5_7_sum_23() {
+
+        List<Pair<Integer, Integer>> expectedResult = new ArrayList<>();
+
+        Assert.assertEquals(expectedResult, Katas.findSummingPairs(new int [] {1,3,5,7}, 23));
+    }
+
+    @Test
     public void testTwoSum_1_3_5_7_sum_8() {
 
         List<Pair<Integer, Integer>> expectedResult = Arrays.asList(new Pair(0,3), new Pair(1,2));
 
         Assert.assertEquals(expectedResult, Katas.findSummingPairs(new int [] {1,3,5,7}, 8));
+    }
 
+    @Test
+    public void testTwoSum_1_3_5_7_sum_4() {
+
+        List<Pair<Integer, Integer>> expectedResult = Arrays.asList(new Pair(0,1));
+
+        Assert.assertEquals(expectedResult, Katas.findSummingPairs(new int [] {1,3,5,7}, 4));
+    }
+
+    @Test
+    public void testTwoSum_1_3_5_7_9_sum_10() {
+
+        List<Pair<Integer, Integer>> expectedResult = Arrays.asList(new Pair(0,4), new Pair(1,3));
+
+        Assert.assertEquals(expectedResult, Katas.findSummingPairs(new int [] {1,3,5,7, 9}, 10));
     }
 
     // Output the string representation of numbers from 1 to n.
@@ -490,7 +513,72 @@ public class KatasTest {
         expectedResult.add("Fizz");
 
         Assert.assertEquals(expectedResult, Katas.fizzbuzz(21));
-
     }
 
+    // Determine if a number is an Armstrong Number
+
+    @Test
+    public void testIsArmstrongNumber_1() {
+        Assert.assertEquals(true, Katas.isArmstrongNumber(1));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_2() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(2));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_10() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(10));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_152() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(152));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_154() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(154));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_153() {
+        Assert.assertEquals(true, Katas.isArmstrongNumber(153));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_369() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(369));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_370() {
+        Assert.assertEquals(true, Katas.isArmstrongNumber(370));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_371() {
+        Assert.assertEquals(true, Katas.isArmstrongNumber(371));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_372() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(372));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_406() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(406));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_407() {
+        Assert.assertEquals(true, Katas.isArmstrongNumber(407));
+    }
+
+    @Test
+    public void testIsArmstrongNumber_408() {
+        Assert.assertEquals(false, Katas.isArmstrongNumber(408));
+    }
 }

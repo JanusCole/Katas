@@ -272,6 +272,7 @@ public class Katas {
     // Output the string representation of numbers from 1 to n.
     // But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”.
     // For numbers which are multiples of both three and five output “FizzBuzz”.
+    // Runtime complexity is O(n)
 
     public static List<String> fizzbuzz(int inputInteger) {
 
@@ -296,6 +297,23 @@ public class Katas {
 
         return resultList;
 
+    }
+
+    // Determine if a number is an Armstrong Number
+    // Runtime complexity is O(logn) base 10
+
+    public static boolean isArmstrongNumber(int inputInteger) {
+
+        int sumResult = 0;
+        int currentValue = inputInteger;
+
+        while (currentValue > 0) {
+            int currentDigit = currentValue % 10;
+            sumResult += Math.pow(currentDigit, 3);
+            currentValue /= 10;
+        }
+
+        return sumResult == inputInteger;
     }
             
 }
